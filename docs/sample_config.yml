@@ -1,0 +1,436 @@
+#
+#
+## 基本設定を記載したファイル。
+##
+## 設定の優先順位判定は、シリアル番号＞キャラ名（スタイル）＞キャラ名＞デフォルト の優先順位となる
+##
+## 対応キャラクターの字幕設定を追加したもの。
+## 下記のサイトを参考にしました。
+## https://www.colordic.org/
+#
+
+
+
+
+
+############## 基礎情報
+
+info:
+  ## このYAMLファイルの構造仕様のバージョン
+  ## 古い仕様のYAMLファイルを読み込まないようにする
+  ver: "2.3.1"
+  
+  # ファイルの入出力先を指定する
+  filedir:
+    # 音声データのあるディレクトリ
+    voidir: "./infile"
+    # 動画の出力ディレクトリ
+    outdir: "./outfile"
+    # 立ち絵画像から動画の画面サイズの画像を生成した場合の保存場所
+    # 生成を行わない場合も指定してください。
+    out_picdir: "./public"
+  # ファイル名の区切り文字として「-」を使うかどうか指定。
+  kugirihaihun: "yes"
+
+
+
+
+###################デフォルトの設定
+#### 各キャラ・番号で指定のない場合はこの項目の値が適応される。
+
+defo:
+  df1:
+    ####### 立ち絵
+    # 立ち絵
+    tatie: "./public/tatie_bc.png"
+    # 「tatie」で指定した立ち絵画像を、そのまま画面の大きさにするかどうか。
+    # すでに生成したい動画と同じサイズの画像を生成して指定している場合はyesを入れる。
+    conp_tatie: "no"
+    # 画面の横幅
+    movi_w: "1280"
+    # 画面の高さ
+    movi_h: "720"
+    # 立ち絵をどこに配置するかを指定します。
+    tatie_muki: "SouthEast"
+    # 立ち絵を画面の高さの何％にするか指定する。
+    tatie_h_p: "50"
+    # 立ち絵の位置を指定した幅分移動させる（画面の幅の％）
+    tatie_position_wps: "0"
+    # 立ち絵の位置を指定した高さ分移動させる（画面の高さの％）
+    tatie_position_hps: "0"
+    # 入力される立ち絵と、出力される動画のフレームレート指定
+    fps: "5"
+    
+    ######### 字幕
+    # 字幕を表示するか指定（yesを入れると表示）
+    enatext: "yes"
+    # 字幕をどちらによせるか（L=左揃え,R=右揃え,それ以外=中央揃え）
+    ena_muki: "tyuuou"
+    # 字幕が画面横にはみ出してしまう場合、自動で改行を行うか指定（yesなら自動改行を行う）
+    ena_auto_kaigyou: "yes"
+    # 字幕のフチに色をつけるか指定定（yesを入れると表示）
+    enatextbord: "yes"
+    # 字幕の背景色をつけるか指定定（yesを入れると表示）
+    enabg: "no"
+    # デフォルトのフォントファイル
+    voice_text_fonts: "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
+    # フォントサイズ
+    voice_text_size: "38"
+    # 字幕の背景色をつけない時の、文字下の空きスペースのサイズ（ピクセル単位）
+    voice_text_u_space_size: "10"
+    # フォントカラー
+    voice_text_color: "0xFFFFFF"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#000000"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "2"
+    # 字幕の背景の色
+    voice_text_bgcolor: "0x0000FF"
+    # 字幕の背景の透明度
+    voice_text_bgtoumei: "0.7"
+
+
+
+##################################### 各キャラの設定 ####################################
+##############デフォルトの項目から違う設定を行いたい場合はこちらに設定する。
+##############こちらの設定が優先される
+
+## 該当キャラの名前のみ指定（全スタイルに適応される）
+## 次の、スタイルを指定したキャラ名の項目に該当がなければこちらが使用される。
+kyara:
+  ## 該当キャラの名前
+  四国めたん:
+    # 立ち絵
+    tatie: "./public/kyara/四国めたん/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#FFFFFF"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#FF69B4"
+  ずんだもん:
+    # 立ち絵
+    tatie: "./public/kyara/ずんだもん/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#FFFFFF"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#68be8d"
+  春日部つむぎ:
+    # 立ち絵
+    tatie: "./public/kyara/春日部つむぎ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#544a47"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#f8e58c"
+  雨晴はう:
+    # 立ち絵
+    tatie: "./public/kyara/雨晴はう/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#ea5550"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#00a1e9"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "3"
+  波音リツ:
+    # 立ち絵
+    tatie: "./public/kyara/波音リツ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#8f2e14"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#ff5324"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "3"
+  玄野武宏:
+    # 立ち絵
+    tatie: "./public/kyara/玄野武宏/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#001e43"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#eaf4fc"
+  白上虎太郎:
+    # 立ち絵
+    tatie: "./public/kyara/白上虎太郎/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#ffffff"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#dccb18"
+  青山龍星:
+    # 立ち絵
+    tatie: "./public/kyara/青山龍星/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#0095d9"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#0d0015"
+  冥鳴ひまり:
+    # 立ち絵
+    tatie: "./public/kyara/冥鳴ひまり/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#0d0015"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#dbd0e6"
+  九州そら:
+    # 立ち絵
+    tatie: "./public/kyara/九州そら/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#65318e"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#000b00"
+  もち子さん:
+    # 立ち絵
+    tatie: "./public/kyara/もち子さん/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#fafdff"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#000b00"
+  剣崎雌雄:
+    # 立ち絵
+    tatie: "./public/kyara/剣崎雌雄/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#a9a9a9"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#2a3314"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "3"
+  WhiteCUL:
+    # 立ち絵
+    tatie: "./public/kyara/WhiteCUL/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#b2cbe4"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#202f55"
+  後鬼:
+    # 立ち絵
+    tatie: "./public/kyara/後鬼/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#b0e0e6"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#0000cd"
+  No.7:
+    # 立ち絵
+    tatie: "./public/kyara/No.7/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#bcbace"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#56256e"
+  ちび式じい:
+    # 立ち絵
+    tatie: "./public/kyara/ちび式じい/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#007bbb"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#eb6ea5"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "3"
+  櫻歌ミコ:
+    # 立ち絵
+    tatie: "./public/kyara/櫻歌ミコ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#f6bfbc"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#e95464"
+  小夜SAYO:
+    # 立ち絵
+    tatie: "./public/kyara/小夜SAYO/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#302833"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#ffec47"
+  ナースロボ＿タイプＴ:
+    # 立ち絵
+    tatie: "./public/kyara/ナースロボ＿タイプＴ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#544a47"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#e9e4d4"
+  "†聖騎士 紅桜†":
+    # 立ち絵
+    tatie: "./public/kyara/†聖騎士 紅桜†/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#fef9fb"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#e73562"
+  雀松朱司:
+    # 立ち絵
+    tatie: "./public/kyara/雀松朱司/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#ec6d71"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#1f3134"
+  麒ヶ島宗麟:
+    # 立ち絵
+    tatie: "./public/kyara/麒ヶ島宗麟/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#ebd842"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#281a14"
+  春歌ナナ:
+    # 立ち絵
+    tatie: "./public/kyara/春歌ナナ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#ff2dff"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#ffd1d1"
+  猫使アル:
+    # 立ち絵
+    tatie: "./public/kyara/猫使アル/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#ff0000"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#000000"
+  猫使ビィ:
+    # 立ち絵
+    tatie: "./public/kyara/猫使ビィ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#3838ff"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#000000"
+  中国うさぎ:
+    # 立ち絵
+    tatie: "./public/kyara/中国うさぎ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#e2041b"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#000000"
+  小春音アミ:
+    # 立ち絵
+    tatie: "./public/kyara/小春音アミ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#2a4073"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#ebf6f7"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "3"
+  つくよみちゃん:
+    # 立ち絵
+    tatie: "./public/kyara/つくよみちゃん/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#f6bfbc"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#4d4c61"
+  白痴ー:
+    # 立ち絵
+    tatie: "./public/kyara/白痴ー/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#eaf4fc"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#3f312b"
+  Yくん開発者:
+    # 立ち絵
+    tatie: "./public/kyara/Yくん開発者/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#1919ff"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#ea5550"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "3"
+  アリアル:
+    # 立ち絵
+    tatie: "./public/kyara/アリアル/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#f5f5f5"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#696969"
+  ミリアル:
+    # 立ち絵
+    tatie: "./public/kyara/ミリアル/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#030303"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#f5f5f5"
+  東北ずん子:
+    # 立ち絵
+    tatie: "./public/kyara/東北ずん子/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#e597b2"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#00552e"
+  東北きりたん:
+    # 立ち絵
+    tatie: "./public/kyara/東北きりたん/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#ede4cd"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#a22041"
+  東北イタコ:
+    # 立ち絵
+    tatie: "./public/kyara/東北イタコ/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "#eaedf7"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#007bbb"
+  フリモメン:
+    # 立ち絵
+    tatie: "./public/kyara/フリモメン/01.png"
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "0xFFFFFF"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#00afcc"
+
+
+
+
+## キャラ名とスタイルの指定
+## 前項のキャラ名のみの指定で同じ項目がある場合、こちらの設定が優先される。
+kyara_st:
+  ＜キャラクター名＞（スタイル）:
+    ######### 字幕
+    # フォントカラー
+    voice_text_color: "0xFFFFFF"
+    # フォント周りのフチの色
+    voice_text_bordercr: "#00FF00"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "1"
+
+
+
+
+
+##################################### シリアル番号の設定 ####################################
+##############デフォルトの項目から違う設定を行いたい場合はこちらに設定する。
+##############こちらの設定が最も優先される
+
+
+seid:
+  "9999_99":
+    # フォントサイズ
+    voice_text_size: "45"
+    # フォント周りのフチの大きさ
+    voice_text_borderw: "3"
+
+
+
+
